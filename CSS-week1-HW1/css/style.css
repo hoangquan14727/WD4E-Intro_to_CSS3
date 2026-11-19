@@ -1,103 +1,154 @@
 body {
-          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-          font-size: 16px;
-          margin: 0;
-          padding: 0;
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              font-size: 16px;
+              margin: 0;
+              padding: 0;
 }
 
 header {
-          background-color: #003366;
-          color: #ffffff;
-          text-align: center;
-          padding: 10px;
+              background-color: #003366;
+              color: #ffffff;
+              text-align: center;
+              padding: 10px;
 }
 
-/* Nav: inline-block, width 80% (HW2) */
+/* Nav: flex layout, attractive styling (3+ properties) */
 nav {
-          background-color: #004080;
-          padding: 10px;
-          display: inline-block;
-          width: 80%;
+              background-color: #004080;
+              padding: 10px 20px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              box-sizing: border-box;
+}
+
+nav ul {
+              display: flex;
+              list-style-type: none;
+              padding: 0;
+              margin: 0;
+              gap: 20px;
 }
 
 nav a {
-          color: #ffffff;
-          text-decoration: none;
+              color: #ffffff;
+              text-decoration: none;
+              padding: 8px 16px;
+              border-radius: 5px;
+              transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Descendant selector: images in nav ~10% width (HW2) */
+/* Hover pseudo-class with transition */
+nav a:hover {
+              background-color: #0066cc;
+              transform: scale(1.05);
+}
+
+/* Descendant selector: images in nav ~10% width */
 nav img {
-          width: 10%;
+              width: 10%;
 }
 
 main {
-          background-color: #f0f4f8;
-          font-size: 18px;
-          padding: 15px;
+              background-color: #f0f4f8;
+              font-size: 18px;
+              padding: 15px;
 }
 
 footer {
-          background-color: #003366;
-          color: #ffffff;
-          padding: 10px;
-          text-align: center;
+              background-color: #003366;
+              color: #ffffff;
+              padding: 15px;
+              text-align: center;
 }
 
 footer a {
-          color: #99ccff;
+              color: #99ccff;
 }
 
-/* Li: COMMENTED OUT for HW2 */
-/* li {
-          display: inline-block;
-          width: 30%;
-          text-align: center;
-          list-style-type: none;
-} */
-
 h1 {
-          text-align: center;
-          font-family: Georgia, 'Times New Roman', Times, serif;
-          color: #ffffff;
+              text-align: center;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              color: #ffffff;
 }
 
 p {
-          line-height: 1.8;
-          padding: 0 10px;
+              line-height: 1.8;
+              padding: 0 10px;
 }
 
-/* Skip to Main Content link (HW2) */
+/* Skip to Main Content link - visible only on focus */
 .skip-link {
-          position: absolute;
-          top: -40px;
-          left: 0;
-          background: #003366;
-          color: #ffffff;
-          padding: 8px;
-          z-index: 100;
+              position: absolute;
+              top: -40px;
+              left: 0;
+              background: #003366;
+              color: #ffffff;
+              padding: 8px;
+              z-index: 100;
+              transition: top 0.3s;
 }
 
 .skip-link:focus {
-          top: 0;
+              top: 0;
 }
 
-/* Grid layout (HW2) */
+/* Image styling with box model (border, padding, border-radius) */
+img {
+              border: 3px solid #004080;
+              padding: 5px;
+              border-radius: 8px;
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on images */
+img:hover {
+              transform: scale(1.03);
+              box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Grid layout - 2 columns */
 .grid {
-          display: grid;
-          grid-template-columns: 40% 40%;
-          justify-content: center;
-          align-items: center;
-          row-gap: 10px;
+              display: grid;
+              grid-template-columns: 40% 40%;
+              justify-content: center;
+              align-items: center;
+              row-gap: 15px;
+              column-gap: 15px;
+              padding: 10px;
 }
 
-/* Descendant selector: images in .grid = 100% width (HW2) */
+/* Descendant selector: images in .grid = 100% width */
 .grid img {
-          width: 100%;
+              width: 100%;
 }
 
-/* Flex layout (HW2) */
+/* nth-child selector - alternate image styling */
+.grid img:nth-child(odd) {
+              border-radius: 15px;
+              border-color: #0066cc;
+}
+
+.grid img:nth-child(even) {
+              border-radius: 50%;
+              border-color: #339966;
+}
+
+/* Flex layout */
 .flex {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              gap: 10px;
+              padding: 10px;
+}
+
+/* nth-child on flex images */
+.flex img:nth-child(odd) {
+              border-radius: 20px;
+}
+
+.flex img:nth-child(even) {
+              border-radius: 5px;
 }
